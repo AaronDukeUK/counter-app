@@ -1,0 +1,49 @@
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: steelblue;
+  color: white;
+  font-weight: 500;
+}
+
+.counter-container {
+  max-width: 500px;
+  margin: 6rem auto;
+  padding: 2rem;
+}
+
+.count {
+  font-size: 5rem;
+  font-style: italic;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#countDisplay {
+  width: 140px;
+}
+
+.count-total {
+  font-size: 3rem;
+  margin-left: 1rem;
+  opacity: 0.5;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.button {
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  padding: 10px 15px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
