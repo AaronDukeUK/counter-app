@@ -51,6 +51,8 @@ function handleTouchEnd(event) {
   } else if (deltaY < -50) {
     adjustCount(-getDropdownValue());
   }
+
+  hideArrows();
 }
 
 // Get dropdown value
@@ -123,11 +125,18 @@ document.querySelectorAll(".button").forEach((button) => {
   });
 });
 
-// Prevent page refresh on swipe down
-document.body.addEventListener(
+// Prevent page refresh on swipe down inside the swipe area
+document.querySelector(".swipe-area").addEventListener(
   "touchmove",
   function (event) {
-    event.preventDefault();
+    // Check if the touch event originated from inside the swipe area
+    if (event.target.closest(".swipe-area")) {
+      event.preventDefault();
+    }
   },
   { passive: false }
 );
+
+document.getElementById("infoButton").addEventListener("click", function () {
+  alert("This is a sample information popup.");
+});

@@ -1,18 +1,19 @@
 @font-face {
   font-family: "Geogrotesque";
-  src: url("../assets/font/Geogrotesque/Geogrotesque-Bd.otf") format("otf"),
-    url("../assets/font/Geogrotesque/Geogrotesque-Rg.otf") format("otf");
+  src: url("../assets/font/Geogrotesque/Geogrotesque-Rg.otf") format("opentype"),
+    url("../assets/font/Geogrotesque/Geogrotesque-Bd.otf") format("opentype"),
+    url("../assets/font/Geogrotesque/Geogrotesque-Bdlt.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Lato";
-  src: url("../assets/font/Lato/Lato-Bold.ttf") format("otf"),
-    url("../assets/font/Lato/Lato-Regular.ttf") format("otf");
+  src: url("../assets/font/Lato/Lato-Regular.ttf") format("truetype"),
+    url("../assets/font/Lato/Lato-Bold.ttf") format("truetype");
 }
 
 /* Body */
 body {
-  font-family: "Geogrotesque", sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
   background-color: #0778d4;
   color: white;
@@ -22,15 +23,16 @@ body {
 /* App Container */
 .app-container {
   max-width: 500px;
-  margin: 1rem auto;
-  padding: 2rem;
+  margin: min(2rem, 7.5vh) auto;
+  padding: min(2rem, 7.5vh);
 }
 
 /* Count */
 .count {
-  font-size: 4rem;
-  font-style: italic;
-  margin-top: 2rem;
+  font-family: "Geogrotesque", sans-serif;
+  font-weight: bold;
+  font-size: min(4rem, 15vw);
+  margin-top: min(2rem, 7.5vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +40,7 @@ body {
 
 /* Count Total */
 .count-total {
-  margin-left: 1.5rem;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 /* Count Container */
@@ -49,20 +50,22 @@ body {
 
 /* Counter Input */
 .counter-input {
+  font-family: "Geogrotesque", sans-serif;
+  font-weight: bold;
   position: absolute;
-  font-size: 4rem;
-  font-style: italic;
-  font-weight: 500;
+  font-size: min(4rem, 15vw);
+  font-weight: bold;
   width: 100%;
   top: 0;
   z-index: 1;
 }
 
 .counter-input input {
+  font-family: "Geogrotesque", sans-serif;
+  font-weight: bold;
   padding: 0.5rem 0;
   border-radius: 25px;
-  font-size: 4rem;
-  font-style: italic;
+  font-size: min(4rem, 15vw);
   width: 100%;
   border: none;
   text-align: center;
@@ -80,13 +83,12 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: min(1rem, 4vw);
 }
 
-/* Button */
-.button {
+.button-container .button {
   position: relative;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 25px;
   font-size: 1.25rem;
   padding: 0.75rem 1.25rem;
@@ -100,25 +102,31 @@ body {
 
 /* Button Option */
 .button-option select {
+  border: none;
+  outline: none;
   color: white;
   background-color: #0778d4;
   font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .button-option select option {
+  border: none;
+  outline: none;
   background-color: #0778d4;
   color: white;
   font-size: 1.25rem;
 }
 
 .button-option select:focus {
+  border: none;
   outline: none;
 }
 
 /* Up Button, Down Button */
 .up-button,
 .down-button {
-  margin-top: 1rem;
+  margin-top: min(1rem, 4vw);
   border: none;
 }
 
@@ -130,7 +138,7 @@ body {
   justify-content: center;
   position: relative;
   border-radius: 25px;
-  margin-top: 2rem;
+  margin-top: min(2rem, 8vw);
   width: 100%;
   height: 40vh;
 }
@@ -142,34 +150,38 @@ body {
   background: radial-gradient(
     circle at 75% 30%,
     rgba(255, 255, 255, 0.8) 5px,
-    /* Adjust opacity as needed */ rgba(0, 255, 255, 0.6) 8%,
-    /* Adjust opacity as needed */ rgba(0, 0, 139, 0.4) 60%,
-    /* Adjust opacity as needed */ rgba(0, 255, 255, 0.6) 100%
-      /* Adjust opacity as needed */
+    rgba(0, 255, 255, 0.6) 8%,
+    rgba(0, 0, 139, 0.4) 60%,
+    rgba(0, 255, 255, 0.6) 100%
   );
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5),
-    /* Adjust opacity as needed */ inset 5px 0 20px rgba(234, 245, 252, 0.3),
-    /* Adjust opacity as needed */ inset 44px 0 30px rgba(194, 216, 254, 0.2),
-    /* Adjust opacity as needed */ inset -10px -30px 50px
-      rgba(253, 233, 234, 0.2),
-    /* Adjust opacity as needed */ inset 0 25px 70px rgba(253, 233, 234, 0.2),
-    /* Adjust opacity as needed */ 0 0 30px rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+    inset 5px 0 20px rgba(234, 245, 252, 0.3),
+    inset 44px 0 30px rgba(194, 216, 254, 0.2),
+    inset -10px -30px 50px rgba(253, 233, 234, 0.2),
+    inset 0 25px 70px rgba(253, 233, 234, 0.2),
+    0 0 30px rgba(255, 255, 255, 0.5);
 }
 
 /* Bubble Sizes */
 .large {
-  width: 100px;
-  height: 100px;
+  width: 25vw;
+  height: 25vw;
+  max-width: 120px;
+  max-height: 120px;
 }
 
 .medium {
-  width: 80px;
-  height: 80px;
+  width: 20vw;
+  height: 20vw;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .small {
-  width: 65px;
-  height: 65px;
+  width: 15vw;
+  height: 15vw;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 /* Bubble Positions */
@@ -179,28 +191,29 @@ body {
 }
 
 .medium {
-  top: 48%;
+  top: 50%;
   z-index: 2;
 }
 
 .small {
-  top: 63%;
+  top: 68%;
   z-index: 1;
 }
 
 /* Up Button */
 .up-button {
   position: absolute;
-  top: 0;
+  top: 8%;
+  cursor: pointer;
 }
 
 .up-button span {
   display: inline-block;
   width: 0;
   height: 0;
-  border-style: solid;
-  border-width: 24px 16px;
-  border-color: transparent transparent white transparent;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 24px solid white;
   border-radius: 2px;
 }
 
@@ -208,7 +221,8 @@ body {
 
 .down-button {
   position: absolute;
-  bottom: 0;
+  bottom: 2%;
+  cursor: pointer;
 }
 
 .down-button span {
@@ -219,4 +233,30 @@ body {
   border-right: 8px solid transparent;
   border-top: 12px solid white;
   border-radius: 2px;
+}
+
+.logo {
+  margin-top: min(2rem, 8vw);
+  max-width: 60px;
+}
+
+/* Style for the information button */
+.info-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0778d4;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.footer-information {
+  margin-top: 2rem;
 }
