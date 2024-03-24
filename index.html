@@ -14,31 +14,52 @@
     <link rel="stylesheet" href="./styles/odometer-theme.css" />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-
   <body>
-    <div class="counter-container">
+    <div class="app-container">
       <div class="button-container">
-        <div class="button">
-          <span>+5</span>
+        <div class="button button-option">
+          <select id="dropdown">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
         </div>
-        <div class="button">
-          <span>+10</span>
+        <div class="button" data-action="edit">
+          <span>Edit</span>
         </div>
-        <div class="button">
+        <div class="button" data-action="reset">
           <span>Reset</span>
         </div>
       </div>
-
+      <div class="count-container">
+        <div class="count">
+          <span id="countDisplay" class="odometer">0</span>
+          <span class="count-total">/ 100</span>
+        </div>
+        <div class="counter-input">
+          <input type="text" id="counterInput" readonly />
+        </div>
+      </div>
+      <!-- Up arrow button -->
+      <div class="button up-button" data-action="up">
+        <span></span>
+      </div>
       <div
-        class="count"
+        class="swipe-area"
         ontouchstart="handleTouchStart(event)"
         ontouchend="handleTouchEnd(event)"
       >
-        <span id="countDisplay" class="odometer">0</span>
-        <span class="count-total">/ 100</span>
+        <div class="bubble large"></div>
+        <div class="bubble medium"></div>
+        <div class="bubble small"></div>
+      </div>
+      <!-- Down arrow button -->
+      <div class="button down-button" data-action="down">
+        <span></span>
       </div>
     </div>
-
     <script src="./js/odometer.js"></script>
     <script src="./js/script.js"></script>
   </body>

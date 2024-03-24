@@ -1,21 +1,24 @@
+/* Body */
 body {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  background-color: steelblue;
+  background-color: #0778d4;
   color: white;
   font-weight: 500;
 }
 
-.counter-container {
+/* App Container */
+.app-container {
   max-width: 500px;
-  margin: 6rem auto;
+  margin: 1rem auto;
   padding: 2rem;
 }
 
+/* Count */
 .count {
   font-size: 5rem;
   font-style: italic;
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,12 +28,47 @@ body {
   width: 140px;
 }
 
+/* Count Total */
 .count-total {
   font-size: 3rem;
   margin-left: 1rem;
   opacity: 0.5;
 }
 
+/* Count Container */
+.count-container {
+  position: relative;
+}
+
+/* Counter Input */
+.counter-input {
+  position: absolute;
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 500;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.counter-input input {
+  padding: 0.5rem 0;
+  border-radius: 25px;
+  font-size: 4rem;
+  font-style: italic;
+  width: 100%;
+  border: none;
+  text-align: center;
+  background-color: #0778d4;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.counter-input input:focus {
+  outline: #66b3bc;
+}
+
+/* Button Container */
 .button-container {
   display: flex;
   align-items: center;
@@ -39,11 +77,118 @@ body {
   gap: 2rem;
 }
 
+/* Button */
 .button {
+  position: relative;
   border: 2px solid white;
   border-radius: 25px;
   font-size: 1.25rem;
   padding: 10px 15px;
-  flex-grow: 1;
-  flex-basis: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Button Option */
+.button-option select {
+  color: white;
+}
+
+.button-option select option {
+  background-color: #0778d4;
+  color: black;
+}
+
+.button-option::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Up Button, Down Button */
+.up-button,
+.down-button {
+  margin-top: 1rem;
+  border: none;
+}
+
+/* Swipe Area */
+.swipe-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 25px;
+  margin-top: 1rem;
+  width: 100%;
+  height: 40vh;
+}
+
+/* Bubble */
+.bubble {
+  border-radius: 50%;
+  position: absolute;
+  background: radial-gradient(
+    circle at 75% 30%,
+    white 5px,
+    aqua 8%,
+    darkblue 60%,
+    aqua 100%
+  );
+  box-shadow: inset 0 0 10px #fff, inset 5px 0 20px #eaf5fc,
+    inset 44px 0px 30px #c2d8fe, inset -10px -30px 50px #fde9ea,
+    inset 0 25px 70px #fde9ea, 0 0 30px #fff;
+}
+
+/* Bubble Sizes */
+.large {
+  width: 100px;
+  height: 100px;
+}
+
+.medium {
+  width: 80px;
+  height: 80px;
+}
+
+.small {
+  width: 65px;
+  height: 65px;
+}
+
+/* Bubble Positions */
+.large {
+  top: 0;
+  z-index: 3;
+}
+
+.medium {
+  top: 70px;
+  z-index: 2;
+}
+
+.small {
+  top: 125px;
+  z-index: 1;
+}
+
+/* Up Button, Down Button Icons */
+.up-button span,
+.down-button span {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.up-button span {
+  border-bottom: 12px solid white;
+}
+
+.down-button span {
+  border-top: 12px solid white;
 }
