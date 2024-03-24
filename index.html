@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+    <!-- Full-screen div -->
+    <div id="overlay">
+      <div class="text">
+        <p>Swipe</p>
+        <p>for</p>
+        <p>Allah</p>
+      </div>
+      <img class="logo" src="./assets/ir-logo.svg" alt="Islamic Releif" />
+    </div>
+
     <div class="app-container">
-      <!-- Information button -->
-      <button id="infoButton" class="info-button">&#9432;</button>
+      <!-- Information button
+      <button id="infoButton" class="info-button">&#9432;</button> -->
 
       <div class="button-container">
         <div class="button button-option">
-          <select id="dropdown">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-          </select>
+          <span>Menu</span>
         </div>
 
         <div class="button" data-action="edit">
@@ -31,6 +35,10 @@
         <div class="button" data-action="reset">
           <span>Reset</span>
         </div>
+      </div>
+
+      <div class="name">
+        <p>SubhanAllah</p>
       </div>
 
       <div class="count-container">
@@ -62,13 +70,11 @@
         <div class="button down-button" data-action="down">
           <span></span>
         </div>
+
+        <a href="https://www.islamic-relief.org.uk/">
+          <img class="logo" src="./assets/ir-logo.svg" alt="Islamic Releif" />
+        </a>
       </div>
-
-      <a href="https://www.islamic-relief.org.uk/">
-        <img class="logo" src="./assets/ir-logo.svg" alt="Islamic Releif" />
-      </a>
-
-      <p class="footer-information">Swipe to change the count</p>
     </div>
 
     <script src="./js/odometer.js"></script>

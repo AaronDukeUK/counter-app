@@ -1,26 +1,18 @@
-// Initialize counter on window load
-window.onload = function () {
-  setTimeout(() => {
-    initializeCounter();
-  }, 100);
+// Initialize counter function
+const initializeCounter = () => {
+  const count = getCountFromSessionStorage();
+  renderCounter(count);
 };
 
-// Initialize counter function
-function initializeCounter() {
-  let count = getCountFromSessionStorage();
-  renderCounter(count);
-}
-
 // Get count from sessionStorage
-function getCountFromSessionStorage() {
-  return sessionStorage.getItem("count")
+const getCountFromSessionStorage = () =>
+  sessionStorage.getItem("count")
     ? parseInt(sessionStorage.getItem("count"))
     : 0;
-}
 
 // Render counter function
-function renderCounter(count) {
-  let odometer = new Odometer({
+const renderCounter = (count) => {
+  const odometer = new Odometer({
     el: document.querySelector(".odometer"),
     value: count,
     duration: 100,
@@ -28,58 +20,69 @@ function renderCounter(count) {
   });
   odometer.render();
   updateCountDisplay(count);
-}
+};
 
 // Update count display function
-function updateCountDisplay(count) {
+const updateCountDisplay = (count) => {
   document.getElementById("countDisplay").textContent = count;
   sessionStorage.setItem("count", count);
-}
+};
 
 // Handle touch start
-function handleTouchStart(event) {
+let startY;
+const handleTouchStart = (event) => {
   startY = event.touches[0].clientY;
-}
+};
 
 // Handle touch end
-function handleTouchEnd(event) {
-  let endY = event.changedTouches[0].clientY;
-  let deltaY = startY - endY;
+const handleTouchEnd = (event) => {
+  const endY = event.changedTouches[0].clientY;
+  const deltaY = startY - endY;
 
   if (deltaY > 50) {
-    adjustCount(getDropdownValue());
+    adjustCount(true);
+    animateBubblesUp();
   } else if (deltaY < -50) {
-    adjustCount(-getDropdownValue());
+    adjustCount(false);
   }
+};
 
-  hideArrows();
-}
-
-// Get dropdown value
-function getDropdownValue() {
-  return parseInt(document.getElementById("dropdown").value);
-}
+const animateBubblesUp = () => {
+  const bubbles = document.querySelectorAll(".bubble");
+  bubbles.forEach((bubble, index) => {
+    bubble.style.animation = `moveThroughBubbles 0.5s ease forwards ${
+      index * 0.1
+    }s`;
+    // Listen for animationend event
+    bubble.addEventListener("animationend", () => {
+      // Reset bubble properties
+      bubble.style.animation = "";
+      bubble.style.transform = "translateY(0)";
+      bubble.style.opacity = "1";
+    });
+  });
+};
 
 // Adjust count function
-function adjustCount(value) {
+const adjustCount = (increment) => {
   let count = getCountFromSessionStorage();
-  count = Math.max(0, Math.min(100, count + value));
+  count = Math.max(0, Math.min(100, count + (increment ? 1 : -1)));
   updateCountDisplay(count);
-}
+};
 
 // Reset count function
-function resetCount() {
+const resetCount = () => {
   if (confirm("Are you sure you want to reset the counter?")) {
     updateCountDisplay(0);
   }
-}
+};
 
 // Hide input on pageload
 document.getElementById("counterInput").style.display = "none";
 
 // Toggle input visibility function
-function toggleInputVisibility() {
-  let inputField = document.getElementById("counterInput");
+const toggleInputVisibility = () => {
+  const inputField = document.getElementById("counterInput");
   inputField.readOnly = !inputField.readOnly;
   inputField.style.display = inputField.readOnly ? "none" : "block";
 
@@ -88,26 +91,22 @@ function toggleInputVisibility() {
     inputField.value = getCountFromSessionStorage();
     inputField.focus();
   }
-}
+};
 
 // Event listener for input field
-document
-  .getElementById("counterInput")
-  .addEventListener("input", function (event) {
-    let newValue = this.value.replace(/\D/g, "");
-    newValue = newValue === "" ? 0 : Math.min(100, parseInt(newValue));
-    this.value = newValue;
-    updateCountDisplay(newValue);
-  });
+document.getElementById("counterInput").addEventListener("input", (event) => {
+  let newValue = event.target.value.replace(/\D/g, "");
+  newValue = newValue === "" ? 0 : Math.min(100, parseInt(newValue));
+  event.target.value = newValue;
+  updateCountDisplay(newValue);
+});
 
 // Event listener for Enter key press
-document
-  .getElementById("counterInput")
-  .addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      toggleInputVisibility();
-    }
-  });
+document.getElementById("counterInput").addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    toggleInputVisibility();
+  }
+});
 
 // Event listeners for buttons
 document.querySelectorAll(".button").forEach((button) => {
@@ -118,9 +117,9 @@ document.querySelectorAll(".button").forEach((button) => {
     } else if (action === "edit") {
       toggleInputVisibility();
     } else if (action === "up") {
-      adjustCount(parseInt(getDropdownValue()));
+      adjustCount(true);
     } else if (action === "down") {
-      adjustCount(-parseInt(getDropdownValue()));
+      adjustCount(false);
     }
   });
 });
@@ -128,8 +127,7 @@ document.querySelectorAll(".button").forEach((button) => {
 // Prevent page refresh on swipe down inside the swipe area
 document.querySelector(".swipe-area").addEventListener(
   "touchmove",
-  function (event) {
-    // Check if the touch event originated from inside the swipe area
+  (event) => {
     if (event.target.closest(".swipe-area")) {
       event.preventDefault();
     }
@@ -137,6 +135,42 @@ document.querySelector(".swipe-area").addEventListener(
   { passive: false }
 );
 
-document.getElementById("infoButton").addEventListener("click", function () {
-  alert("This is a sample information popup.");
-});
+// const modal = document.getElementById("infoModal");
+// const infoButton = document.getElementById("infoButton");
+// const closeButton = modal.querySelector(".close");
+
+// // When the user clicks the button, open the modal
+// infoButton.addEventListener("click", () => {
+//   modal.style.display = "block";
+// });
+
+// // When the user clicks on the close button, close the modal
+// closeButton.addEventListener("click", () => {
+//   modal.style.display = "none";
+// });
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.addEventListener("click", (event) => {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// });
+
+// Function to show overlay
+const showOverlay = () => {
+  const overlay = document.getElementById("overlay");
+  overlay.style.display = "flex";
+
+  setTimeout(() => {
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 1000);
+  }, 1000);
+};
+
+// Initialize counter on window load
+window.onload = () => {
+  initializeCounter();
+  showOverlay();
+};
