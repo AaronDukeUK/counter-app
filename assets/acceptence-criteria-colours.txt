@@ -1,0 +1,42 @@
+# Acceptence Criteria
+- Button 1 
+	- a dropdown with a list of numbers
+	- these numbers represent how much the counter will increment by per swipe up or down
+	- dropdown values: 1, 2, 3, 5, 10
+- Button 2
+	- edit button which brings up the keyboard to edit the counter - ideally the num pad
+	- the counter input field should only accept value - no validaion required, just reject any non-numeric input
+- Button 3
+	- resets the counter
+	- before resetting, a confirmation pop-up should appear
+	- a simple JS alert() is okay, unless you can easily add a custom alert
+- Swiping
+	- Swipe should be allowed from anywhere below the numbers e.g. 23/100
+	- Swipe should be allowed from anywhere above he logo
+	- each swipe should increase/decrese the counter by the number selected in Button 1
+- Other behvaiour
+	- There should be scroll, vertical or horizontal to allow for a nicer UX when swiping
+	- Responsive behaviour: this should be designed mobile primarly, for larger screens the elementsshould remain the same size, or similar
+	- An up and down arrow should be added to increase/decrease the counter
+	- If possible, the arrow should be pressable to increase/decrease the counter
+	- the decrese arrow shold below the 'bubbles' in the screenshot and the arrow should be smaller in sizes, but the pressable area should be sufficient to allow for easy press/click
+	- There is likely to be small text under the logo, encouraging people to donate to the charity - probably about 2 or 4 words only
+- i (information) Button
+	- This has not been rendered on the screenshot, but I think a small minimilist 'I' button would be nice in the top right corner
+	- This button will bring up a small pop up giving people info on how to add the one page as a PWA on their phones
+	- i've seen this library which seems to support different phones: https://github.com/philfung/add-to-homescreen
+	- for now we can just install it as is and just replace the logo with the IR Logo
+	- If it's quick and easy, styling this to match the design of the app would be good. This would just be changing the font to (Lato) and the background colour for now. Maybe the arrow colour too if it clashes with the background
+- Animaiton
+	- In the centre of the screen, There needs to be some sort of animation to hint to people, that they need to swipe up and down, a GIF image would be fine here
+	- If you feel like this will take too long - for the first demo, we can just have a text in the middle which tells people to swipe up to start the counting, the text should fade out when they start
+	- I'm not sure what the 'bubbles' on the screenshot are, maybe they wanted bubbles as you swipe, maybe we can discuss this to see if it's possible, but not required - contact me when you've done the above stuff and we can discuss
+
+
+# Colors
+Primary: #0778D4
+Secondary: #66b3bc
+
+# Fonts
+Headings/Counter: Geogrotesque
+Body: Lato

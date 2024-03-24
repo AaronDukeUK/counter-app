@@ -80,7 +80,9 @@ function toggleInputVisibility() {
   let inputField = document.getElementById("counterInput");
   inputField.readOnly = !inputField.readOnly;
   inputField.style.display = inputField.readOnly ? "none" : "block";
+
   if (!inputField.readOnly) {
+    inputField.type = "number";
     inputField.value = getCountFromSessionStorage();
     inputField.focus();
   }
@@ -120,3 +122,12 @@ document.querySelectorAll(".button").forEach((button) => {
     }
   });
 });
+
+// Prevent page refresh on swipe down
+document.body.addEventListener(
+  "touchmove",
+  function (event) {
+    event.preventDefault();
+  },
+  { passive: false }
+);

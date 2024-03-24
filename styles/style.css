@@ -1,10 +1,22 @@
+@font-face {
+  font-family: "Geogrotesque";
+  src: url("../assets/font/Geogrotesque/Geogrotesque-Bd.otf") format("otf"),
+    url("../assets/font/Geogrotesque/Geogrotesque-Rg.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/font/Lato/Lato-Bold.ttf") format("otf"),
+    url("../assets/font/Lato/Lato-Regular.ttf") format("otf");
+}
+
 /* Body */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Geogrotesque", sans-serif;
   text-align: center;
   background-color: #0778d4;
   color: white;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 /* App Container */
@@ -16,7 +28,7 @@ body {
 
 /* Count */
 .count {
-  font-size: 5rem;
+  font-size: 4rem;
   font-style: italic;
   margin-top: 2rem;
   display: flex;
@@ -24,14 +36,9 @@ body {
   justify-content: center;
 }
 
-#countDisplay {
-  width: 140px;
-}
-
 /* Count Total */
 .count-total {
-  font-size: 3rem;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   opacity: 0.5;
 }
 
@@ -61,7 +68,6 @@ body {
   text-align: center;
   background-color: #0778d4;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .counter-input input:focus {
@@ -74,37 +80,39 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Button */
 .button {
   position: relative;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 25px;
   font-size: 1.25rem;
-  padding: 10px 15px;
+  padding: 0.75rem 1.25rem;
   cursor: pointer;
-  overflow: hidden;
+  flex-grow: 1;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Button Option */
 .button-option select {
   color: white;
+  background-color: #0778d4;
+  font-size: 1.25rem;
 }
 
 .button-option select option {
   background-color: #0778d4;
-  color: black;
+  color: white;
+  font-size: 1.25rem;
 }
 
-.button-option::after {
-  content: "\25BC";
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  pointer-events: none;
+.button-option select:focus {
+  outline: none;
 }
 
 /* Up Button, Down Button */
@@ -116,13 +124,13 @@ body {
 
 /* Swipe Area */
 .swipe-area {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  position: relative;
   border-radius: 25px;
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 100%;
   height: 40vh;
 }
@@ -133,14 +141,19 @@ body {
   position: absolute;
   background: radial-gradient(
     circle at 75% 30%,
-    white 5px,
-    aqua 8%,
-    darkblue 60%,
-    aqua 100%
+    rgba(255, 255, 255, 0.8) 5px,
+    /* Adjust opacity as needed */ rgba(0, 255, 255, 0.6) 8%,
+    /* Adjust opacity as needed */ rgba(0, 0, 139, 0.4) 60%,
+    /* Adjust opacity as needed */ rgba(0, 255, 255, 0.6) 100%
+      /* Adjust opacity as needed */
   );
-  box-shadow: inset 0 0 10px #fff, inset 5px 0 20px #eaf5fc,
-    inset 44px 0px 30px #c2d8fe, inset -10px -30px 50px #fde9ea,
-    inset 0 25px 70px #fde9ea, 0 0 30px #fff;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5),
+    /* Adjust opacity as needed */ inset 5px 0 20px rgba(234, 245, 252, 0.3),
+    /* Adjust opacity as needed */ inset 44px 0 30px rgba(194, 216, 254, 0.2),
+    /* Adjust opacity as needed */ inset -10px -30px 50px
+      rgba(253, 233, 234, 0.2),
+    /* Adjust opacity as needed */ inset 0 25px 70px rgba(253, 233, 234, 0.2),
+    /* Adjust opacity as needed */ 0 0 30px rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
 }
 
 /* Bubble Sizes */
@@ -161,34 +174,49 @@ body {
 
 /* Bubble Positions */
 .large {
-  top: 0;
+  top: 28%;
   z-index: 3;
 }
 
 .medium {
-  top: 70px;
+  top: 48%;
   z-index: 2;
 }
 
 .small {
-  top: 125px;
+  top: 63%;
   z-index: 1;
 }
 
-/* Up Button, Down Button Icons */
-.up-button span,
+/* Up Button */
+.up-button {
+  position: absolute;
+  top: 0;
+}
+
+.up-button span {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 24px 16px;
+  border-color: transparent transparent white transparent;
+  border-radius: 2px;
+}
+
+/* Down Button */
+
+.down-button {
+  position: absolute;
+  bottom: 0;
+}
+
 .down-button span {
   display: inline-block;
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-}
-
-.up-button span {
-  border-bottom: 12px solid white;
-}
-
-.down-button span {
   border-top: 12px solid white;
+  border-radius: 2px;
 }
