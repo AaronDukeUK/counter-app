@@ -4,80 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter App</title>
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/odometer-theme.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./dist/css/style.css" />
   </head>
+
   <body>
-    <!-- Full-screen div -->
-    <div id="overlay">
-      <div class="text">
+    <!-- Splash Overlay -->
+    <div class="splash">
+      <div>
         <p>Swipe</p>
         <p>for</p>
         <p>Allah</p>
       </div>
-      <img class="logo" src="./assets/ir-logo.svg" alt="Islamic Releif" />
+      <img src="./assets/images/ir-logo.svg" alt="Islamic Releif" />
     </div>
+    <!-- End Splash Overlay -->
 
-    <div class="app-container">
-      <!-- Information button
-      <button id="infoButton" class="info-button">&#9432;</button> -->
-
-      <div class="button-container">
-        <div class="button button-option">
+    <!-- App Container -->
+    <main class="app-container">
+      <!-- Top Nav -->
+      <nav class="top-nav">
+        <div class="button button--top" data-action="menu">
           <span>Menu</span>
         </div>
 
-        <div class="button" data-action="edit">
+        <div class="button button--top" data-action="edit">
           <span>Edit</span>
         </div>
 
-        <div class="button" data-action="reset">
+        <div class="button button--top" data-action="reset">
           <span>Reset</span>
         </div>
-      </div>
+      </nav>
+      <!-- End Top Nav -->
 
+      <!-- Name -->
       <div class="name">
         <p>SubhanAllah</p>
       </div>
+      <!-- End Name -->
 
-      <div class="count-container">
-        <div class="count">
-          <span id="countDisplay" class="odometer">0</span>
-          <span class="count-total">/100</span>
-        </div>
-
-        <div class="counter-input">
-          <input type="text" id="counterInput" readonly />
-        </div>
+      <!-- Count -->
+      <div class="count">
+        <span class="count-display">0</span>
+        <span class="count-total">/100</span>
+        <input type="text" class="count-input" readonly />
       </div>
+      <!-- End Count -->
 
-      <div
-        class="swipe-area"
-        ontouchstart="handleTouchStart(event)"
-        ontouchend="handleTouchEnd(event)"
-      >
-        <!-- Up arrow button -->
-        <div class="button up-button" data-action="up">
+      <!-- Swipe Area -->
+      <div class="swipe-area">
+        <!-- Up Arrow -->
+        <div class="button button--up" data-action="up">
           <span></span>
         </div>
+        <!-- End Up Arrow -->
 
-        <div class="bubble large"></div>
-        <div class="bubble medium"></div>
-        <div class="bubble small"></div>
+        <!-- Bubble Container -->
+        <div class="bubble-container">
+          <div class="bubble bubble--large"></div>
+          <div class="bubble bubble--medium"></div>
+          <div class="bubble bubble--small"></div>
+        </div>
+        <!-- End Bubble Container -->
 
-        <!-- Down arrow button -->
-        <div class="button down-button" data-action="down">
+        <!-- Down Arrow -->
+        <div class="button button--down" data-action="down">
           <span></span>
         </div>
+        <!-- End Down Arrow -->
 
+        <!-- Logo -->
         <a href="https://www.islamic-relief.org.uk/">
-          <img class="logo" src="./assets/ir-logo.svg" alt="Islamic Releif" />
+          <img
+            class="logo"
+            src="./assets/images/ir-logo.svg"
+            alt="Islamic Releif"
+          />
         </a>
+        <!-- End Logo -->
       </div>
-    </div>
+      <!-- End Swipe Area -->
+    </main>
+    <!-- End App Container -->
 
-    <script src="./js/odometer.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./dist/js/main.js"></script>
   </body>
 </html>

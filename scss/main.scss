@@ -1,0 +1,66 @@
+/* Base */
+@import "base/reset";
+@import "base/fonts";
+@import "base/animations";
+
+/* Components */
+@import "components/splash";
+@import "components/nav";
+@import "components/name";
+@import "components/buttons";
+@import "components/count";
+@import "components/bubbles";
+@import "components/modal";
+
+body {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  background: linear-gradient(
+    to bottom right,
+    lighten(#0778d4, 10%),
+    darken(#0778d4, 10%)
+  );
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+  max-height: 800px;
+  min-height: 650px;
+  margin: auto;
+}
+
+.swipe-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 1rem;
+  height: 100%;
+}
+
+.logo {
+  position: absolute;
+  bottom: 35px;
+  max-width: 40px;
+  transform: translate(-50%, 50%);
+}
+
+.footer-information {
+  margin-top: 2rem;
+}

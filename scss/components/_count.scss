@@ -1,0 +1,28 @@
+.count {
+  position: relative;
+  font-family: "Geogrotesque", sans-serif;
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-total {
+    opacity: 0.4;
+  }
+
+  &-input {
+    position: absolute;
+    font-family: "Geogrotesque", sans-serif;
+    font-weight: 600;
+    font-size: 3.5rem;
+    height: 100%;
+    border: none;
+    text-align: center;
+    background-color: #0778d4;
+
+    &:focus {
+      outline: #66b3bc;
+      border: none;
+    }
+  }
+}

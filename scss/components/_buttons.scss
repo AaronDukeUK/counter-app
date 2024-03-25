@@ -1,0 +1,49 @@
+.button {
+  cursor: pointer;
+
+  &--top {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    flex-grow: 1;
+  }
+
+  &--up {
+    opacity: 0.9;
+
+    span {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 24px solid white;
+      border-radius: 2px;
+    }
+  }
+
+  &--down {
+    opacity: 0.3;
+
+    span {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 12px solid white;
+      border-radius: 2px;
+    }
+  }
+}
+
+.info-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0778d4;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  border: none;
+  z-index: 10;
+}
