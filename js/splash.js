@@ -1,4 +1,3 @@
-// Function to show overlay
 export const showOverlay = () => {
   const overlay = document.querySelector(".splash");
   setTimeout(() => {

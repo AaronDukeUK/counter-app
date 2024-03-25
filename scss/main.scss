@@ -5,10 +5,12 @@
 
 /* Components */
 @import "components/splash";
+@import "components/menu";
 @import "components/nav";
 @import "components/name";
 @import "components/buttons";
 @import "components/count";
+@import "components/swipe-area";
 @import "components/bubbles";
 @import "components/modal";
 
@@ -41,24 +43,6 @@ body {
   max-height: 800px;
   min-height: 650px;
   margin: auto;
-}
-
-.swipe-area {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  gap: 1rem;
-  height: 100%;
-}
-
-.logo {
-  position: absolute;
-  bottom: 35px;
-  max-width: 40px;
-  transform: translate(-50%, 50%);
 }
 
 .footer-information {
