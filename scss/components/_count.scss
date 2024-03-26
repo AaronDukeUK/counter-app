@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
 
+  &-divider {
+    opacity: 0.4;
+  }
+
   &-total {
     opacity: 0.4;
   }

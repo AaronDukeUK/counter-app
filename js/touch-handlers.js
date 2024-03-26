@@ -1,6 +1,6 @@
 // touch-handlers.js
 import { adjustCount } from "./counter.js";
-import { animateBubblesUp } from "./animations.js";
+import { animateBubblesUp, animateBubblesDown } from "./animations.js";
 
 let startY;
 export const handleTouchStart = (event) => {
@@ -15,5 +15,6 @@ export const handleTouchEnd = (event) => {
     animateBubblesUp();
   } else if (deltaY < -50) {
     adjustCount(false);
+    animateBubblesDown();
   }
 };

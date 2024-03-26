@@ -3,14 +3,20 @@ import * as Counter from "./counter.js";
 
 const menu = document.querySelector(".menu");
 const formInputs = document.querySelectorAll(".menu input");
-const startButton = document.querySelector(".start-button");
+const startButton = document.querySelector(".button--start");
 
 export const showMenu = () => {
   menu.style.display = "flex";
+  setTimeout(() => {
+    menu.style.opacity = "1";
+  }, 0);
 };
 
 const hideMenu = () => {
-  menu.style.display = "none";
+  menu.style.opacity = "0";
+  setTimeout(() => {
+    menu.style.display = "none";
+  }, 500);
 };
 
 const saveInputToLocalStorage = (input) => {
