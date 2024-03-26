@@ -23,12 +23,13 @@
     <div class="menu">
       <div>
         <h2>Select Djzikr</h2>
-        <input type="text" name="select-djzikr" />
+        <input type="text" name="select-djzikr" max="15" />
       </div>
       <div>
         <h2>Select Number</h2>
-        <input type="number" name="select-number" />
+        <input type="number" name="select-number" max="1000" />
       </div>
+      <button class="button start-button">Start</button>
       <img src="./assets/images/ir-logo-blue.svg" alt="Islamic Releif" />
     </div>
     <!-- End Menu -->
@@ -37,30 +38,28 @@
     <main class="app-container">
       <!-- Top Nav -->
       <nav class="top-nav">
-        <div class="button button--top" data-action="menu">
+        <button class="button button--top" data-action="menu">
           <span>Menu</span>
-        </div>
+        </button>
 
-        <div class="button button--top" data-action="edit">
+        <button class="button button--top" data-action="edit">
           <span>Edit</span>
-        </div>
+        </button>
 
-        <div class="button button--top" data-action="reset">
+        <button class="button button--top" data-action="reset">
           <span>Reset</span>
-        </div>
+        </button>
       </nav>
       <!-- End Top Nav -->
 
-      <!-- Name -->
-      <div class="name">
-        <p>SubhanAllah</p>
-      </div>
-      <!-- End Name -->
+      <!-- Djzikr -->
+      <p class="select-djzikr-display"></p>
+      <!-- End Djzikr -->
 
       <!-- Count -->
       <div class="count">
         <span class="count-display">0</span>
-        <span class="count-total">/100</span>
+        <span class="count-total select-number-display"></span>
         <input type="text" class="count-input" readonly />
       </div>
       <!-- End Count -->
