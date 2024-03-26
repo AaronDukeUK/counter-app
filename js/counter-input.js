@@ -1,4 +1,8 @@
-import { getCountFromLocalStorage, updateCountDisplay } from "./counter.js";
+import {
+  getCountFromLocalStorage,
+  getMaxCountFromLocalStorage,
+  updateCountDisplay,
+} from "./counter.js";
 
 const inputField = document.querySelector(".count-input");
 
@@ -18,8 +22,9 @@ const handleInput = (event) => {
 };
 
 const parseInputValue = (value) => {
+  const maxCount = getMaxCountFromLocalStorage();
   const parsedValue = value.replace(/\D/g, "");
-  return parsedValue === "" ? 0 : Math.min(100, parseInt(parsedValue));
+  return parsedValue === "" ? 0 : Math.min(maxCount, parseInt(parsedValue));
 };
 
 const updateInputValue = (value) => {

@@ -2,8 +2,10 @@ import * as Counter from "./counter.js";
 import * as Input from "./counter-input.js";
 import * as Menu from "./menu.js";
 
+import { resetCount } from "./modal.js";
+
 const actions = {
-  reset: Counter.resetCount,
+  reset: resetCount,
   menu: Menu.showMenu,
   edit: Input.toggleInputVisibility,
   up: () => Counter.adjustCount(true),
