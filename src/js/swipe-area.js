@@ -6,7 +6,7 @@ export const initializeSwipeArea = () => {
   swipeArea.addEventListener("touchstart", handleTouchStart);
   swipeArea.addEventListener("touchend", handleTouchEnd);
   swipeArea.addEventListener("touchmove", preventPageRefresh, {
-    passive: false,
+    passive: true,
   });
 };
 
