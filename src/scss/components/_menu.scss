@@ -44,7 +44,8 @@
     max-width: 60px;
   }
 
-  input {
+  input[type="text"],
+  input[type="number"] {
     font-family: "Geogrotesque", sans-serif;
     background: #edf7ff;
     border: none;
@@ -60,5 +61,64 @@
     &:focus {
       outline: 2px solid #0778d4;
     }
+  }
+
+  /* Checkbox */
+  .checkbox-container {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    right: 0;
+  }
+
+  .checkmark {
+    width: 25px;
+    height: 25px;
+    background-color: #edf7ff;
+    border: 1px solid #0778d4;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .checkmark:after {
+    content: "";
+    display: none;
+  }
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #0778d4;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .checkbox-label {
+    font-family: "Geogrotesque", sans-serif;
+    color: #0778d4;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    font-weight: 400;
+    cursor: pointer;
   }
 }
