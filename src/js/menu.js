@@ -5,6 +5,7 @@ const menu = document.querySelector(".menu");
 const closeMenuButton = document.querySelector(".menu--close");
 const formInputs = document.querySelectorAll(".menu input");
 const startButton = document.querySelector(".button--start");
+const checkbox = document.getElementById("landscape-checkbox");
 
 export const showMenu = () => {
   menu.style.display = "flex";
@@ -44,18 +45,35 @@ const handleDjzikrInputChange = (input) => {
   saveInputToLocalStorage(input);
 };
 
-formInputs.forEach((input) => {
-  input.addEventListener("change", () => {
-    saveInputToLocalStorage(input);
-  });
+const handleCheckboxChange = (input) => {
+  // Check landscape mode from local storage
+  const landscapeMode = getFromLocalStorage("landscape-mode");
+  if (landscapeMode === "true") {
+    // Apply rotation if landscape mode is true
+    document.querySelector(".bubble-container").style.transform =
+      "rotate(90deg)";
+  } else {
+    // Reset rotation if landscape mode is false
+    document.querySelector(".bubble-container").style.transform =
+      "rotate(0deg)";
+  }
+  saveToLocalStorage("landscape-mode", input.checked);
+};
 
+formInputs.forEach((input) => {
   if (input.name === "select-number") {
     input.addEventListener("input", () => {
       handleNumberInputChange(input);
     });
-  } else if (input.name === "select-djzikr") {
+  }
+  if (input.name === "select-djzikr") {
     input.addEventListener("input", () => {
       handleDjzikrInputChange(input);
+    });
+  }
+  if (input.name === "landscape-checkbox") {
+    input.addEventListener("change", () => {
+      handleCheckboxChange(input);
     });
   }
 });
