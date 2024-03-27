@@ -33,3 +33,13 @@
     }
   }
 }
+
+.count-input::-webkit-outer-spin-button,
+.count-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.count-input[type="number"] {
+  -moz-appearance: textfield;
+}
