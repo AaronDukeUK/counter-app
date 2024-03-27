@@ -16,6 +16,10 @@ const hideInputField = () => {
   inputField.style.display = "none";
 };
 
+const showInputField = () => {
+  inputField.style.display = "block";
+};
+
 const handleInput = (event) => {
   const newValue = parseInputValue(event.target.value);
   updateInputValue(newValue);
@@ -39,12 +43,11 @@ const handleEnterKeyPress = (event) => {
 };
 
 export const toggleInputVisibility = () => {
-  inputField.readOnly = !inputField.readOnly;
-  inputField.style.display = inputField.readOnly ? "none" : "block";
-
-  if (!inputField.readOnly) {
-    inputField.type = "number";
+  if (inputField.style.display === "none") {
+    showInputField();
     inputField.value = getCountFromLocalStorage();
     inputField.focus();
+  } else {
+    hideInputField();
   }
 };

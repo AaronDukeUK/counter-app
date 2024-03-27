@@ -21,6 +21,11 @@
 
     <!-- Menu -->
     <div class="menu">
+      <img
+        class="menu--close"
+        src="./assets/icons/close.png"
+        alt="Close Menu"
+      />
       <div>
         <h2>Select Djzikr</h2>
         <input type="text" name="select-djzikr" max="15" />
@@ -38,8 +43,8 @@
     <div class="modal" id="reset-modal">
       <div class="modal--content">
         <p>Are you sure you want to reset the counter?</p>
-        <button class="button button--top" id="confirm-reset">Reset</button>
-        <button class="button button--top" id="cancel-reset">Cancel</button>
+        <button class="button button--modal" id="confirm-reset">Reset</button>
+        <button class="button button--modal" id="cancel-reset">Cancel</button>
       </div>
     </div>
     <!-- End Modal -->
@@ -49,15 +54,15 @@
       <!-- Top Nav -->
       <nav class="top-nav">
         <button class="button button--top" data-action="menu">
-          <span>Menu</span>
+          <img src="./assets/icons/menu.png" alt="Close Menu" />
         </button>
 
         <button class="button button--top" data-action="edit">
-          <span>Edit</span>
+          <img src="./assets/icons/edit.png" alt="Close Menu" />
         </button>
 
         <button class="button button--top" data-action="reset">
-          <span>Reset</span>
+          <img src="./assets/icons/undo-arrow.png" alt="Close Menu" />
         </button>
       </nav>
       <!-- End Top Nav -->
@@ -71,7 +76,7 @@
         <span class="count-display">0</span>
         <span class="count-divider">/</span>
         <span class="count-total select-number-display"></span>
-        <input type="text" class="count-input" readonly />
+        <input type="text" class="count-input" type="number" />
       </div>
       <!-- End Count -->
 

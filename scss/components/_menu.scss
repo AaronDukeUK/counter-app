@@ -22,6 +22,15 @@
   opacity: 0;
   transition: all 0.5s ease-in-out;
 
+  &--close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 20px;
+    cursor: pointer;
+    filter: invert(50%) sepia(50%) saturate(800%) hue-rotate(170deg);
+  }
+
   div {
     width: 90%;
   }
@@ -42,6 +51,7 @@
     border-radius: 5px;
     height: 50px;
     width: 100%;
+    max-width: 400px;
     margin-top: 2rem;
     text-align: center;
     color: #0778d4;

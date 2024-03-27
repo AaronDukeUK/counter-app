@@ -1,8 +1,8 @@
 import { saveToLocalStorage, getFromLocalStorage } from "./local-storage.js";
-import * as Counter from "./counter.js";
 import { resetCount } from "./modal.js";
 
 const menu = document.querySelector(".menu");
+const closeMenuButton = document.querySelector(".menu--close");
 const formInputs = document.querySelectorAll(".menu input");
 const startButton = document.querySelector(".button--start");
 
@@ -60,16 +60,24 @@ formInputs.forEach((input) => {
   }
 });
 
+closeMenuButton.addEventListener("click", () => {
+  hideMenu();
+  updateTextAndNumberDisplay();
+});
+
 startButton.addEventListener("click", () => {
   hideMenu();
   resetCount();
-
-  const djzikrText = getFromLocalStorage("select-djzikr");
-  displayDjzikrText(djzikrText);
-
-  const targetNumber = getFromLocalStorage("select-number");
-  displayTargetNumber(targetNumber);
+  updateTextAndNumberDisplay();
 });
+
+const updateTextAndNumberDisplay = (text, number) => {
+  const djzikrText = getFromLocalStorage("select-djzikr");
+  const targetNumber = getFromLocalStorage("select-number");
+
+  displayDjzikrText(djzikrText || getDefaultInputValue("select-djzikr"));
+  displayTargetNumber(targetNumber || getDefaultInputValue("select-number"));
+};
 
 export const initializeMenuInputs = () => {
   formInputs.forEach((input) => {

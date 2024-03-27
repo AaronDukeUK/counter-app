@@ -4,4 +4,9 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+
+  img {
+    filter: invert(1);
+    width: 20px;
+  }
 }
