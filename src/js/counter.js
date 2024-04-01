@@ -1,10 +1,8 @@
 import { saveToLocalStorage, getFromLocalStorage } from "./local-storage.js";
 
-export const DEFAULT_COUNT = 0;
-
 export const getCountFromLocalStorage = () => {
   const count = getFromLocalStorage("count");
-  return count ? parseInt(count) : DEFAULT_COUNT;
+  return count ? parseInt(count) : 0;
 };
 
 export const getMaxCountFromLocalStorage = () => {
@@ -14,8 +12,14 @@ export const getMaxCountFromLocalStorage = () => {
 
 export const updateCountDisplay = (count) => {
   const displayElement = document.querySelector(".count-display");
+  const maxCount = getFromLocalStorage("select-number");
   displayElement.textContent = count;
   saveToLocalStorage("count", count);
+  if (count == maxCount) {
+    if ("vibrate" in navigator) {
+      navigator.vibrate(500);
+    }
+  }
 };
 
 export const adjustCount = (increment) => {
@@ -25,11 +29,9 @@ export const adjustCount = (increment) => {
   updateCountDisplay(count);
 };
 
-// export const resetCount = () => {
-//   if (confirm("Are you sure you want to reset the counter?")) {
-//     updateCountDisplay(DEFAULT_COUNT);
-//   }
-// };
+export const resetCount = () => {
+  updateCountDisplay(0);
+};
 
 export const initializeCounter = () => {
   const count = getCountFromLocalStorage();

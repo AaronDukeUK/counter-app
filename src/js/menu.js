@@ -1,5 +1,5 @@
 import { saveToLocalStorage, getFromLocalStorage } from "./local-storage.js";
-import { resetCount } from "./modal.js";
+import { resetCount } from "./counter.js";
 
 const menu = document.querySelector(".menu");
 const closeMenuButton = document.querySelector(".menu--close");

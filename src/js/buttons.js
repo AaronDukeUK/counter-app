@@ -2,14 +2,21 @@ import * as Counter from "./counter.js";
 import * as Input from "./counter-input.js";
 import * as Menu from "./menu.js";
 
-import { resetCount } from "./modal.js";
+import { showResetModal } from "./modal.js";
+import { animateBubblesDown, animateBubblesUp } from "./animations.js";
 
 const actions = {
-  reset: resetCount,
+  reset: showResetModal,
   menu: Menu.showMenu,
   edit: Input.toggleInputVisibility,
-  up: () => Counter.adjustCount(true),
-  down: () => Counter.adjustCount(false),
+  up: () => {
+    Counter.adjustCount(true);
+    animateBubblesUp();
+  },
+  down: () => {
+    Counter.adjustCount(false);
+    animateBubblesDown();
+  },
 };
 
 export const initializeButtons = () => {

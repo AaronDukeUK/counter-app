@@ -20,14 +20,15 @@
     font-family: "Geogrotesque", sans-serif;
     font-weight: 600;
     font-size: 3rem;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     height: 100%;
     border: none;
     text-align: center;
     background-color: #0778d4;
-    border: 1px solid #e7f4ff;
+    border: 2px solid #e7f4ff;
     color: white;
+    border-radius: 25px;
     &:focus {
       outline: #66b3bc;
     }

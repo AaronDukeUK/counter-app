@@ -5,7 +5,7 @@ const initializeBubbleStyles = (bubble) => {
 
 const animateBubble = (bubble, animation, delay) => {
   setTimeout(() => {
-    bubble.style.animation = `${animation} 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards`;
+    bubble.style.animation = `${animation} 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards`;
   }, delay);
   bubble.addEventListener("animationend", () => {
     bubble.style.animation = "";

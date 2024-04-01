@@ -14,6 +14,7 @@ export const initializeInput = () => {
 
 const hideInputField = () => {
   inputField.style.display = "none";
+  inputField.removeEventListener("keydown", handleKeyDown);
 };
 
 const showInputField = () => {
@@ -47,7 +48,16 @@ export const toggleInputVisibility = () => {
     showInputField();
     inputField.value = getCountFromLocalStorage();
     inputField.focus();
+
+    inputField.addEventListener("keydown", handleKeyDown);
   } else {
+    hideInputField();
+  }
+};
+
+const handleKeyDown = (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
     hideInputField();
   }
 };

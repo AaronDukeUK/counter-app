@@ -1,13 +1,13 @@
-import { updateCountDisplay, DEFAULT_COUNT } from "./counter.js";
+import { resetCount } from "./counter.js";
 
 const resetModal = document.getElementById("reset-modal");
 const confirmResetButton = document.getElementById("confirm-reset");
 const cancelResetButton = document.getElementById("cancel-reset");
 
-export const resetCount = () => {
+export const showResetModal = () => {
   resetModal.style.display = "block";
   confirmResetButton.addEventListener("click", () => {
-    updateCountDisplay(DEFAULT_COUNT);
+    resetCount();
     resetModal.style.display = "none";
   });
   cancelResetButton.addEventListener("click", () => {
