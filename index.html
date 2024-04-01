@@ -70,7 +70,17 @@
         <span class="count-display">0</span>
         <span class="count-divider">/</span>
         <span class="count-total select-number-display"></span>
-        <input class="count-input" type="number" />
+        <div class="count-input-container">
+          <input class="count-input" type="number" name="count-input" />
+          <button class="button count-input-close" data-action="close-input">
+            <img
+              src="./assets/icons/enter.png"
+              alt="Finish Editing"
+              width="30"
+              height="30"
+            />
+          </button>
+        </div>
       </div>
       <!-- End Count -->
 
@@ -118,12 +128,17 @@
         alt="Close Menu"
       />
       <div>
-        <h2>Describe Dhikr</h2>
-        <input type="text" name="select-djzikr" max="15" />
+        <label for="select-djzikr">Describe Dhikr</label>
+        <input type="text" id="select-djzikr" name="select-djzikr" max="15" />
       </div>
       <div>
-        <h2>Enter Target</h2>
-        <input type="number" name="select-number" max="1000" />
+        <label for="select-number">Enter Target</label>
+        <input
+          type="number"
+          id="select-number"
+          name="select-number"
+          max="1000"
+        />
       </div>
       <button class="button button--start">Start</button>
       <a href="https://www.islamic-relief.org.uk/" target="_blank">

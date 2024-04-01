@@ -9,6 +9,7 @@ const actions = {
   reset: showResetModal,
   menu: Menu.showMenu,
   edit: Input.toggleInputVisibility,
+  "close-input": Input.hideInputField,
   up: () => {
     Counter.adjustCount(true);
     animateBubblesUp();

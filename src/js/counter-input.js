@@ -4,6 +4,7 @@ import {
   updateCountDisplay,
 } from "./counter.js";
 
+const inputContainer = document.querySelector(".count-input-container");
 const inputField = document.querySelector(".count-input");
 
 export const initializeInput = () => {
@@ -13,12 +14,12 @@ export const initializeInput = () => {
 };
 
 const hideInputField = () => {
-  inputField.style.display = "none";
+  inputContainer.style.display = "none";
   inputField.removeEventListener("keydown", handleKeyDown);
 };
 
 const showInputField = () => {
-  inputField.style.display = "block";
+  inputContainer.style.display = "block";
 };
 
 const handleInput = (event) => {
@@ -44,7 +45,7 @@ const handleEnterKeyPress = (event) => {
 };
 
 export const toggleInputVisibility = () => {
-  if (inputField.style.display === "none") {
+  if (inputContainer.style.display === "none") {
     showInputField();
     inputField.value = getCountFromLocalStorage();
     inputField.focus();
