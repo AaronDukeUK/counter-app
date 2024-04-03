@@ -122,35 +122,42 @@
 
     <!-- Menu -->
     <div class="menu">
-      <img
-        class="menu--close"
-        src="./assets/icons/close.png"
-        alt="Close Menu"
-      />
-      <div>
-        <label for="select-djzikr">Describe Dhikr</label>
-        <input type="text" id="select-djzikr" name="select-djzikr" max="15" />
+      <div id="install-button" class="menu--install">
+        <span>Install App</span>
+        <img src="./assets/icons/download.png" alt="Install App" />
       </div>
-      <div>
-        <label for="select-number">Enter Target</label>
-        <input
-          type="number"
-          id="select-number"
-          name="select-number"
-          max="1000"
-        />
-      </div>
-      <button id="start-button" class="button button--menu">Start</button>
-      <button id="install-button" class="button button--menu" hidden>
-        Install App
-      </button>
-      <a href="https://www.islamic-relief.org.uk/" target="_blank">
+
+      <div class="menu--container">
         <img
-          src="./assets/images/ir-logo-blue.svg"
-          alt="Islamic Releif"
-          loading="lazy"
+          class="menu--close"
+          src="./assets/icons/close.png"
+          alt="Close Menu"
         />
-      </a>
+        <div>
+          <label for="select-djzikr">Describe Dhikr</label>
+          <input type="text" id="select-djzikr" name="select-djzikr" max="15" />
+        </div>
+        <div>
+          <label for="select-number">Enter Target</label>
+          <input
+            type="number"
+            id="select-number"
+            name="select-number"
+            max="1000"
+          />
+        </div>
+        <button id="start-button" class="button button--menu">Start</button>
+
+        <a href="https://www.islamic-relief.org.uk/" target="_blank">
+          <img
+            src="./assets/images/ir-logo-blue.svg"
+            alt="Islamic Releif"
+            loading="lazy"
+            width="100"
+            height="100"
+          />
+        </a>
+      </div>
     </div>
     <!-- End Menu -->
 

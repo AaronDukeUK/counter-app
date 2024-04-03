@@ -18,6 +18,10 @@
     color: #0778d4;
     font-size: 1.25rem;
     width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   &--modal {
@@ -67,15 +71,4 @@
       border-radius: 2px;
     }
   }
-}
-
-.info-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #0778d4;
-  font-family: "Lato", sans-serif;
-  font-size: 24px;
-  border: none;
-  z-index: 10;
 }
