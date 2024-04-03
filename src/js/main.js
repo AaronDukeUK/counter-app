@@ -1,5 +1,6 @@
 // script.js
 import { showOverlay } from "./splash.js";
+import { initializePWA } from "./pwa.js";
 import { initializeCounter } from "./counter.js";
 import { initializeInput } from "./counter-input.js";
 import { initializeButtons } from "./buttons.js";
@@ -14,6 +15,7 @@ import {
 window.onload = () => {
   showOverlay();
   showMenu();
+  initializePWA();
   initializeCounter();
   initializeInput();
   initializeButtons();
