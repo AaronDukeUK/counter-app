@@ -39,20 +39,3 @@ body {
   min-height: 650px;
   margin: auto;
 }
-
-/* Set the viewport to portrait mode on mobile phones */
-@media screen and (max-width: 950px) and (orientation: landscape) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: top left;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    overflow-y: auto;
-    height: 100vw;
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-  }
-}
