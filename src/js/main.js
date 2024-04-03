@@ -1,6 +1,5 @@
 // script.js
 import { showOverlay } from "./splash.js";
-import { initializePWA } from "./pwa.js";
 import { initializeCounter } from "./counter.js";
 import { initializeInput } from "./counter-input.js";
 import { initializeButtons } from "./buttons.js";
@@ -15,7 +14,6 @@ import {
 window.onload = () => {
   showOverlay();
   showMenu();
-  initializePWA();
   initializeCounter();
   initializeInput();
   initializeButtons();
@@ -23,3 +21,25 @@ window.onload = () => {
   initializeMenuInputs();
   initializeDisplayInputs();
 };
+
+let installPrompt = null;
+const installButton = document.querySelector("#install-button");
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+  installButton.removeAttribute("hidden");
+});
+
+installButton.addEventListener("click", async () => {
+  if (!installPrompt) return;
+
+  const result = await installPrompt.prompt();
+  console.log(`Install prompt was: ${result.outcome}`);
+  disableInAppInstallPrompt();
+});
+
+function disableInAppInstallPrompt() {
+  installPrompt = null;
+  installButton.setAttribute("hidden", "");
+}
