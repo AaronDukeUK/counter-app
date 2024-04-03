@@ -4,7 +4,7 @@ import { resetCount } from "./counter.js";
 const menu = document.querySelector(".menu");
 const closeMenuButton = document.querySelector(".menu--close");
 const formInputs = document.querySelectorAll(".menu input");
-const startButton = document.querySelector(".button--start");
+const startButton = document.querySelector("#start-button");
 
 export const showMenu = () => {
   menu.style.display = "flex";
