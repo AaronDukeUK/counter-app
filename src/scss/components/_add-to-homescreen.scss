@@ -1,0 +1,40 @@
+.adhs {
+  &-container {
+    z-index: 9998 !important;
+    font-family: "Lato", sans-serif !important;
+    background-color: rgba(7, 120, 212, 0.2) !important;
+  }
+  &-logo {
+    margin-top: 3.5rem !important;
+  }
+  &-modal {
+    margin-top: 6rem !important;
+    background-color: white !important;
+    border-radius: 25px !important;
+  }
+  &-title {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+    padding: 0 0.5rem !important;
+  }
+  &-list-item:not(:last-child) {
+    margin-bottom: 1.5rem !important;
+  }
+  &-circle {
+    background-color: #0778d4 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  &-number {
+    color: white !important;
+    padding: 0 !important;
+    font-weight: 400 !important;
+  }
+  &-instruction {
+    font-size: 1rem !important;
+    span {
+      font-size: 1rem !important;
+    }
+  }
+}

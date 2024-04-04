@@ -5,6 +5,7 @@ const menu = document.querySelector(".menu");
 const closeMenuButton = document.querySelector(".menu--close");
 const formInputs = document.querySelectorAll(".menu input");
 const startButton = document.querySelector(".button--start");
+const infoButton = document.querySelector(".menu--info");
 
 export const showMenu = () => {
   menu.style.display = "flex";
@@ -69,6 +70,12 @@ startButton.addEventListener("click", () => {
   hideMenu();
   resetCount();
   updateTextAndNumberDisplay();
+});
+
+infoButton.addEventListener("click", () => {
+  setTimeout(() => {
+    window.AddToHomeScreenInstance.show();
+  }, 100);
 });
 
 const updateTextAndNumberDisplay = (text, number) => {
