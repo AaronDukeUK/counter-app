@@ -11,6 +11,13 @@
 
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
     <link rel="manifest" href="manifest.json" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.js"></script>
+
     <link rel="stylesheet" href="./dist/css/style.css" />
 
     <title>Dhikr</title>
@@ -162,5 +169,21 @@
     <!-- End Modal -->
 
     <script src="./dist/js/main.js" async></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        window.AddToHomeScreenInstance = new window.AddToHomeScreen({
+          appName: "Aardvark",
+          appIconUrl: "/assets/images/512x512.png",
+          assetUrl:
+            "https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/",
+          showErrorMessageForUnsupportedBrowsers: false,
+          allowUserToCloseModal: false,
+          maxModalDisplayCount: -1,
+        });
+
+        ret = window.AddToHomeScreenInstance.show();
+      });
+    </script>
   </body>
 </html>
