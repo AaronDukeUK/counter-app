@@ -9,11 +9,13 @@ import {
   initializeDisplayInputs,
   showMenu,
 } from "./menu.js";
+import { InitializeAddToHomeScreen } from "./add-to-homescreen.js";
 
 // Initialize counter on window load
 window.onload = () => {
   showOverlay();
   showMenu();
+  InitializeAddToHomeScreen();
   initializeCounter();
   initializeInput();
   initializeButtons();

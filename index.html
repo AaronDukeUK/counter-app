@@ -174,23 +174,5 @@
 
     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.js"></script>
     <script src="./dist/js/main.js" async></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelector(".menu--info").addEventListener("click", () => {
-          window.AddToHomeScreenInstance = new window.AddToHomeScreen({
-            appName: "Dhikr",
-            appIconUrl: "/assets/images/512x512.png",
-            assetUrl:
-              "https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/",
-            showErrorMessageForUnsupportedBrowsers:
-              window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL,
-            allowUserToCloseModal: true,
-            maxModalDisplayCount: -1,
-          });
-
-          ret = window.AddToHomeScreenInstance.show();
-        });
-      });
-    </script>
   </body>
 </html>
