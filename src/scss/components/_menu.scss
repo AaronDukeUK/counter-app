@@ -31,6 +31,15 @@
     filter: invert(50%) sepia(50%) saturate(800%) hue-rotate(170deg);
   }
 
+  &--info {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 25px;
+    cursor: pointer;
+    filter: invert(50%) sepia(50%) saturate(800%) hue-rotate(170deg);
+  }
+
   div {
     width: 90%;
   }

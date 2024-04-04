@@ -16,7 +16,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.js"></script>
 
     <link rel="stylesheet" href="./dist/css/style.css" />
 
@@ -130,6 +129,11 @@
     <!-- Menu -->
     <div class="menu">
       <img
+        class="menu--info"
+        src="./assets/icons/information.png"
+        alt="More Info"
+      />
+      <img
         class="menu--close"
         src="./assets/icons/close.png"
         alt="Close Menu"
@@ -168,22 +172,24 @@
     </div>
     <!-- End Modal -->
 
+    <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.js"></script>
     <script src="./dist/js/main.js" async></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        window.AddToHomeScreenInstance = new window.AddToHomeScreen({
-          appName: "Aardvark",
-          appIconUrl: "/assets/images/512x512.png",
-          assetUrl:
-            "https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/",
-          showErrorMessageForUnsupportedBrowsers:
-            window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL,
-          allowUserToCloseModal: true,
-          maxModalDisplayCount: -1,
-        });
+        document.querySelector(".menu--info").addEventListener("click", () => {
+          window.AddToHomeScreenInstance = new window.AddToHomeScreen({
+            appName: "Dhikr",
+            appIconUrl: "/assets/images/512x512.png",
+            assetUrl:
+              "https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/",
+            showErrorMessageForUnsupportedBrowsers:
+              window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL,
+            allowUserToCloseModal: true,
+            maxModalDisplayCount: -1,
+          });
 
-        ret = window.AddToHomeScreenInstance.show();
+          ret = window.AddToHomeScreenInstance.show();
+        });
       });
     </script>
   </body>
